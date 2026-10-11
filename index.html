@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuickNotes - a simple notes application">
+    <title>QuickNotes | Your Digital Notebook</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="api.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="logo" href="#" aria-label="QuickNotes home">
+            <span class="logo-icon">Q</span>
+            <span>QuickNotes</span>
+        </a>
+        <span class="api-label">
+            <span class="status-dot"></span>
+            Demo API
+        </span>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <p class="eyebrow">YOUR SPACE, YOUR IDEAS</p>
+            <h1>Your thoughts,<br><span>beautifully organised.</span></h1>
+            <p class="subtitle">
+                Capture an idea, write a reminder, or save something
+                worth remembering. It all starts here.
+            </p>
+        </section>
+
+        <section class="editor card">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CREATE SOMETHING</p>
+                    <h2>Write a new note</h2>
+                </div>
+                <span class="note-symbol" aria-hidden="true">✎</span>
+            </div>
+
+            <form id="note-form">
+                <label for="note-title">Note title</label>
+                <input
+                    id="note-title"
+                    name="title"
+                    type="text"
+                    placeholder="Give your note a title..."
+                    maxlength="100"
+                    required
+                >
+
+                <label for="note-body">Your note</label>
+                <textarea
+                    id="note-body"
+                    name="body"
+                    placeholder="What's on your mind?"
+                    rows="4"
+                    maxlength="2000"
+                    required
+                ></textarea>
+
+                <div class="form-footer">
+                    <p id="form-message" role="status" aria-live="polite">
+                        Your next great idea starts here.
+                    </p>
+                    <button id="submit-button" type="submit">
+                        <span aria-hidden="true">＋</span> Save note
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="notes-section">
+            <div class="notes-heading">
+                <div>
+                    <p class="eyebrow">YOUR COLLECTION</p>
+                    <h2>Recent notes</h2>
+                </div>
+                <button id="refresh-button" class="secondary-button" type="button">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <p id="notes-status" class="notes-status" role="status"
+               aria-live="polite">Loading your notes...</p>
+
+            <div id="notes-list" class="notes-grid"></div>
+        </section>
+
+        <aside class="demo-notice">
+            <span aria-hidden="true">ⓘ</span>
+            <p>
+                <strong>Demo mode:</strong> QuickNotes uses JSONPlaceholder,
+                a testing API. New notes and deletions are simulated by the
+                service, so changes are not permanently saved on its server.
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Made with care by QuickNotes · A system design project</p>
+    </footer>
+</body>
+</html>
