@@ -199,18 +199,23 @@ textarea:focus-visible {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+#title-input::placeholder,
 #note-title::placeholder,
+#body-input::placeholder,
 #note-body::placeholder {
     color: #aaa8bb;
 }
 
+#title-input:focus,
 #note-title:focus,
+#body-input:focus,
 #note-body:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(102, 88, 211, 0.08);
     outline: none;
 }
 
+#body-input,
 #note-body {
     resize: vertical;
     min-height: 120px;
@@ -237,6 +242,7 @@ textarea:focus-visible {
     color: var(--error);
 }
 
+#submit-btn,
 #submit-button,
 .secondary-button,
 .delete-button {
@@ -246,17 +252,20 @@ textarea:focus-visible {
     transition: background 0.2s, transform 0.2s;
 }
 
+#submit-btn,
 #submit-button {
     padding: 12px 20px;
     background: var(--primary);
     color: white;
 }
 
+#submit-btn:hover,
 #submit-button:hover {
     background: var(--primary-dark);
     transform: translateY(-1px);
 }
 
+#submit-btn:disabled,
 #submit-button:disabled,
 button:disabled {
     opacity: 0.6;
@@ -409,6 +418,7 @@ footer {
         flex-direction: column;
     }
 
+    #submit-btn,
     #submit-button {
         width: 100%;
     }
